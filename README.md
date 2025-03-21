@@ -1,6 +1,8 @@
 # 🎬 SmartScene Navigator  
 **An interactive video player with automatic scene detection & structured navigation.**  
 
+[![Demo Video](https://img.youtube.com/vi/7ZWW_gZ76U8/maxresdefault.jpg)](https://youtu.be/7ZWW_gZ76U8)
+
 ## 📌 Overview  
 SmartScene Navigator processes videos by **automatically detecting scenes, shots, and subshots**, creating a structured **table of contents** for seamless navigation. The interactive player allows users to **jump between different segments**, ensuring synchronized **video and audio playback**.  
 
