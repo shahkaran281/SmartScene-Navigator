@@ -1,24 +1,44 @@
 # 🎬 SmartScene Navigator  
-*An interactive video player with automatic scene detection and structured navigation.*
+**An interactive video player with automatic scene detection & structured navigation.**  
 
 ## 📌 Overview  
-SmartScene Navigator processes videos by **automatically detecting scenes, shots, and subshots**, generating a structured **table of contents** for easy navigation. The interactive player allows users to **jump between different segments seamlessly**, with synchronized **video and audio playback**.
+SmartScene Navigator processes videos by **automatically detecting scenes, shots, and subshots**, creating a structured **table of contents** for seamless navigation. The interactive player allows users to **jump between different segments**, ensuring synchronized **video and audio playback**.  
+
+---
 
 ## 🛠 Tech Stack  
 - **Python** – Core development  
 - **OpenCV** – Video processing & analysis  
 - **SceneDetect** – Scene and shot segmentation  
-- **Pygame** – Audio playback & synchronization  
+- **Pygame** – Audio playback & UI integration  
 - **JSON** – Storing scene-shot metadata  
 
+---
+
 ## 🚀 Features  
-✔ **Automated Scene & Shot Detection** using motion analysis  
-✔ **Interactive Video Player** with real-time navigation  
-✔ **Hierarchical Indexing** (Scenes → Shots → Subshots)  
-✔ **Seamless Audio-Video Synchronization**  
-✔ **JSON-Based Metadata for Easy Integration**  
+✔ **Automatic Scene, Shot, & Subshot Detection**  
+✔ **Clickable Navigation Through Video Segments**  
+✔ **Real-time Video & Audio Synchronization**  
+✔ **User-friendly Interface for Seamless Playback**  
+✔ **JSON-based Metadata Storage for Easy Access**  
 
+---
 
+## 📂 Project Structure  
+```
+SmartSceneNavigator/
+├── data/                 # Sample video & audio files
+├── scripts/              # Core processing scripts
+│   ├── main.py           # Extracts scenes, shots, subshots
+│   ├── parse_json.py     # Reads & verifies JSON structure
+│   ├── ui.py             # Interactive video player
+│   ├── shot.py           # Defines Shot class & motion analysis
+├── utils/                # Helper functions (motion detection, indexing)
+├── requirements.txt      # Dependencies
+├── README.md             # Project documentation
+```
+
+---
 
 ## ▶ How to Run  
 
@@ -27,37 +47,20 @@ SmartScene Navigator processes videos by **automatically detecting scenes, shots
 pip install -r requirements.txt
 ```
 
-### 2️⃣ Extract Scene-Shot Metadata  
+### 2️⃣ Run the Interactive Video Player  
 ```bash
-python scripts/script.py --file output.json --folder /path/to/video
+python ui.py InputVideo.rgb InputAudio.wav
 ```
 
-### 3️⃣ Verify JSON Structure  
-```bash
-python scripts/parse_json.py output.json
-```
+This opens the player, displaying the video alongside an interactive **scene-shot hierarchy**.
 
-### 4️⃣ Convert Video to RGB (if needed)  
-```python
-import cv2
-
-cap = cv2.VideoCapture("InputVideo.mp4")
-with open("InputVideo.rgb", "wb") as f:
-    while cap.isOpened():
-        ret, frame = cap.read()
-        if not ret:
-            break
-        f.write(frame.tobytes())
-cap.release()
-```
-
-### 5️⃣ Run the Interactive Video Player  
-```bash
-python scripts/ui.py InputVideo.rgb InputAudio.wav
-```
+---
 
 ## 📜 License  
-This project is licensed under the **MIT License** – see the [LICENSE](LICENSE) file for details.  
+This project is licensed under the **MIT License**. See the [LICENSE](LICENSE) file for details.  
+
+---
 
 ## 📬 Contact  
-For any questions, feel free to reach out via **GitHub Issues** or submit a **Pull Request**! 🚀
+For any questions, feel free to open an issue or submit a pull request. Happy exploring! 🎥  
+
